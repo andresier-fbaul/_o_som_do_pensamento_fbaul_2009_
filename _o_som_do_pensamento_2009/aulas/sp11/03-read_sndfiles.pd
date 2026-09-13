@@ -1,0 +1,21 @@
+#N canvas 184 141 289 358 10;
+#X obj 61 87 readsf~;
+#X obj 80 107 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 80 129 gate;
+#X obj 63 191 *~ 0.1;
+#X obj 65 252 dac~;
+#X floatatom 107 191 5 0 0 0 - - -;
+#X obj 110 171 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 106 106 loop;
+#X msg 61 67 open voice.wav \, 1;
+#X connect 0 0 3 0;
+#X connect 0 1 2 1;
+#X connect 1 0 2 0;
+#X connect 2 0 8 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 3 1;
+#X connect 6 0 5 0;
+#X connect 8 0 0 0;

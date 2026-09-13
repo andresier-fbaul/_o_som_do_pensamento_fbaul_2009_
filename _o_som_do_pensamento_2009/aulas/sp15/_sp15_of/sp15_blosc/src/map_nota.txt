@@ -1,0 +1,6 @@
+// float map; add in ofUtils.cpp
+
+
+float map(float in, float srcmin, float srcmax, float dstmin, float dstmax) {
+	return ((in-srcmin) * (dstmax-dstmin)/(srcmax-srcmin) + dstmin);
+}

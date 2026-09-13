@@ -1,0 +1,18 @@
+/// MPE testes para o projecto colectivo
+
+para lançar:
+
+1. ir ao terminal / linha de comandos :
+
+	> cd ...Server_v4/mpeServer
+	> java -jar mpeServer.jar
+	
+isto lança o servidor no computador.
+deixem estar sempre a correr.
+
+
+2. lançar os 3 sketches, cliente esquerda, centro, direita
+
+3. devem extender o do centro, que será o vosso, os outros estão apenas para verem como ficará como outros ecrans
+
+4. devem agora modificar o comportamento deste cliente_CENTRO para o projecto colectivo. have fun!

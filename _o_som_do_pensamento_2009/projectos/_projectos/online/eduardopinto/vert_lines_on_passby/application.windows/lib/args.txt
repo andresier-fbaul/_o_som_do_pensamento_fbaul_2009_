@@ -1,0 +1,3 @@
+ -Xms64m -Xmx2048m
+vert_lines_on_passby
+vert_lines_on_passby.jar,core.jar,opengl.jar,jogl.jar,gluegen-rt.jar,video.jar,flob.jar

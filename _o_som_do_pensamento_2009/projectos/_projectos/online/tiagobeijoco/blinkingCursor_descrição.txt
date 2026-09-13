@@ -1,0 +1,12 @@
+"blinkingCursor", by Tiago Craft. O Som do Pensamento, Feb 2009
+
+
+neste Sketch defini a base do meu icone pulsingCircle, usado mais tarde 
+em programas como "multiAttraction/multiAtracção" ou "Mapping/Mapear".
+Também é uma primeira abordagem à simulação de gravidade.
+_
+
+this is where i set the basis for my PulsingCircle icon, later used
+in applets like "multiAttraction/multiAtracção" or "Mapping/Mapear".
+It's also a first approach to gravity simulations.
+

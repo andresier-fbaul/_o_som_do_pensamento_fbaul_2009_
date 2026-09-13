@@ -1,0 +1,3 @@
+ -Xms64m -Xmx2048m 
+GettingStartedCapture2a
+GettingStartedCapture2a.jar,core.jar,video.jar

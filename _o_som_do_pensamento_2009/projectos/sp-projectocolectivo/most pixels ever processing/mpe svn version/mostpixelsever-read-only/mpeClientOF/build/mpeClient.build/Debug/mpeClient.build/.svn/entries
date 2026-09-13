@@ -1,0 +1,81 @@
+8
+
+dir
+96
+http://mostpixelsever.googlecode.com/svn/trunk/mpeClientOF/build/mpeClient.build/Debug/mpeClient.build
+http://mostpixelsever.googlecode.com/svn
+
+
+
+2008-10-21T16:08:01.298361Z
+63
+mantissa
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+157d3c86-a953-0410-9145-c177083a77ea
+
+Objects-normal
+dir
+
+mpeClient~.dep
+file
+
+
+
+
+2009-04-29T13:01:21.000000Z
+2a09e1956eb3084b2b39a0f0b95c4c9b
+2008-10-21T16:08:01.298361Z
+63
+mantissa
+
+mpeClient.dep
+file
+
+
+
+
+2009-04-29T13:01:21.000000Z
+0dde4edcbd8065a58e4d3b0ce061b97f
+2008-10-21T16:08:01.298361Z
+63
+mantissa
+
+mpeClientDebug.hmap
+file
+
+
+
+
+2009-04-29T13:01:21.000000Z
+e64fd73acee8d0f537ae575c03cb7955
+2008-10-21T16:08:01.298361Z
+63
+mantissa
+has-props
+
+Script-E4B6FFFD0C3F9AB9008CF71C.sh
+file
+
+
+
+
+2009-04-29T13:01:21.000000Z
+ba666065ae9cee526ba0dab68423b02a
+2008-10-21T16:08:01.298361Z
+63
+mantissa
+has-props
+

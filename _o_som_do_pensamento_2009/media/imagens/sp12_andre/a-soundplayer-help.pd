@@ -1,0 +1,29 @@
+#N canvas 227 161 408 343 10;
+#X floatatom 76 69 5 0 0 0 - - -;
+#X obj 179 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 76 45 speed;
+#X text 180 46 read;
+#X obj 75 194 dac~;
+#X obj 76 138 *~ 0.7;
+#X floatatom 234 66 5 0 0 0 - - -;
+#X obj 305 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 234 42 speed;
+#X text 306 44 read;
+#X obj 233 191 dac~;
+#X obj 234 135 *~ 0.7;
+#X obj 234 87 a-soundplayer;
+#X obj 76 90 a-soundplayer 0.51;
+#X msg 105 232 \; pd dsp 1;
+#X msg 169 232 \; pd dsp 0;
+#X connect 0 0 13 0;
+#X connect 1 0 13 1;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 6 0 12 0;
+#X connect 7 0 12 1;
+#X connect 11 0 10 0;
+#X connect 11 0 10 1;
+#X connect 12 0 11 0;
+#X connect 13 0 5 0;

@@ -1,0 +1,8 @@
+newmtl material
+Ka 0.300000 0.300000 0.300000
+Kd 0.700000 0.700000 0.700000
+Ks 0.149000 0.149000 0.149000
+Ns 48.000000
+Tr 0.000000
+illum 2
+map_Kd data\RataMinnie.jpg

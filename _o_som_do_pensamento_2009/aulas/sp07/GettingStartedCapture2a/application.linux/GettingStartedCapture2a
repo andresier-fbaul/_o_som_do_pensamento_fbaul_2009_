@@ -1,0 +1,4 @@
+#!/bin/sh
+
+APPDIR=$(dirname "$0")
+java  -Djava.library.path="$APPDIR" -cp "$APPDIR/lib/GettingStartedCapture2a.jar:$APPDIR/lib/core.jar:$APPDIR/lib/video.jar" GettingStartedCapture2a

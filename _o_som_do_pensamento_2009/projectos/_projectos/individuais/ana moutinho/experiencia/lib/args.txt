@@ -1,0 +1,3 @@
+
+makeMeWalk
+makeMeWalk.jar,core.jar,objloader.jar,opengl.jar,jogl.jar,gluegen-rt.jar

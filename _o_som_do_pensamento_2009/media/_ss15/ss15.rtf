@@ -1,0 +1,124 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red100\green56\blue32;\red63\green110\blue116;\red170\green13\blue145;
+\red28\green0\blue207;\red0\green116\blue0;\red38\green71\blue75;\red46\green13\blue110;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10560\viewh9180\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 hoje focamos alguns exemplos de comportamentos de part\'edculas mais avan\'e7ados com o openframeworks. analisamos part\'edculas em vectores c++, depois extendemos a class das part\'edculas para incorporar for\'e7as de atrac\'e7\'e3o e repuls\'e3o em fun\'e7\'e3o de elementos ou as outras part\'edculas vizinhas, e vamos desembocar em exemplos de enxames. finalizamos com exemplos 3d e interac\'e7\'e3o imagem/som.\
+\
+configura\'e7\'e3o dos compiladores\
+\
+as p\'e1ginas de setup dos compiladores da equipa do openframeworks s\'e3o muito claras e devem ser seguidas passo a passo com aten\'e7\'e3o. nos pc's instalamos o codeblocks com mingw, e nos mac's o xcode.\
+\
+para 'instalar' o openframeworks, basta descarregar o ficheiro da nossa plataforma (006 xcode fat  para mac e 006 codeblocks fat para windows), descomprimi-lo e mover a pasta para uma directoria de trabalho \'e0 nossa escolha. o que \'e9 importante \'e9 manter a estrutura de directorias dessas pastas:\
+\
+addons/ \
+apps/ \
+libs/ \
+other/\
+\
+os nossos projectos para compilar consistem apenas do src folder. primeiro temos de criar uma directoria de trabalho dentro da estrutura do openframeworks. criei a directoria apps/somdopensamento/. de seguida copiamos os projectos da sess\'e3o para dentro desta directoria. este passo \'e9 importante, s\'f3 assim os projectos estar\'e3o correctamente configurados para compila\'e7\'e3o. os projectos consistem em pastas com uma subpasta 'src' que tem os ficheiros .h e .cpp onde est\'e1 declarado o c\'f3digo c++ que tentamos compilar.\
+\
+para a instala\'e7\'e3o dos projectos, no final, antes de tentarem compilar, devem ter algo como\
+\
+of006/apps/somdopensamento/sp15_circulo/src/main.cpp\
+of006/apps/somdopensamento/sp15_circulo/src/testApp.cpp\
+of006/apps/somdopensamento/sp15_circulo/src/testApp.h\
+\
+devemos agora de ir copiar um projecto exemplo semelhante ao que queremos compilar e que v\'eaem nativamente com o openframeworks (em   apps/examples/emptyexample/openframeworks.xcodeproj ) para a nossa directoria do projecto a compilar, para podermos abrir o novo projecto e introduzir o nosso c\'f3digo fonte para a pasta src do projecto. devemos agora ter tamb\'e9m os novos ficheiros duplicados de uma pasta existente dos exemplos antes da src:\
+\
+of006/apps/somdopensamento/sp15_circulo/openFrameworks.xcodeproj\
+of006/apps/somdopensamento/sp15_circulo/openFrameworks-Info.plist\
+(para os pc's \'e9 semelhante, copiamos o ficheiro de projecto codeblocks que est\'e1 nos exemplos para este local)\
+\
+abre-se o projecto e na \'e1rea de browser do projecto introduzimos os ficheiros .h e .cpp que fazem parte do nosso projecto. ap\'f3s este passo final, temos o projecto configurado e pronto para o pr\'f3ximo passo, que corresponde \'e0 compila\'e7\'e3o do c\'f3digo fonte e liga\'e7\'f5es \'e0s v\'e1rias bibliotecas de c\'f3digo que se usam (opengl, opencv, rtaudio, freetype, etc, etc). para compilarmos vamos aos menus ou carregamos no play.\
+\
+ap\'f3s a compila\'e7\'e3o deve surgir dentro da pasta do nosso projecto um ficheiro bin\'e1rio execut\'e1vel na nossa plataforma que corre o c\'f3digo exemplo simples da cria\'e7\'e3o de um c\'edrculo que segue o rato.\
+\
+\
+oop (object oriented programming)\
+\
+semelhante ao primeiro exemplo do processing, fomos passar as vari\'e1veis necess\'e1rias \'e0 cria\'e7\'e3o de um circulo dentro de uma class, com vari\'e1veis e fun\'e7\'f5es. em c++ a defini\'e7\'e3o de classes \'e9 muito semelhante ao processing, apenas temos de em conta dois passos importantes.\
+o primeiro \'e9 a inclus\'e3o do header apenas uma vez, atrav\'e9s das directivas 
+\f1\fs20 \cf2 \CocoaLigature0 #ifndef CIRCULO_H, #define CIRCULO_H 
+\f0\fs24 \cf0 \CocoaLigature1 e
+\f1\fs20 \cf2 \CocoaLigature0  #endif.
+\f0\fs24 \cf0 \CocoaLigature1  a outra no\'e7\'e3o \'e9 terminar a declara\'e7\'e3o da class no header com um ';' ap\'f3s as chavetas '\}' que terminam a declara\'e7\'e3o da classe.\
+\
+este \'e9 o header da class circulo, e a seguir o ficheiro cpp da mesma class.\
+\
+\
+no testApp.h, o local onde come\'e7amos a programar a nossa fun\'e7\'e3o, em vez de termos vari\'e1veis float posx, posy, rad como no primeiro exemplo, temos agora um objecto 
+\f1\fs20 \cf3 \CocoaLigature0 circulo 
+\f0\fs24 \cf0 \CocoaLigature1 do tipo
+\f1\fs20 \cf3 \CocoaLigature0  Circulo 
+\f0\fs24 \cf0 \CocoaLigature1 que definimos nos ficheiros circulo.h e circulo.cpp anteriores.\
+\
+a fun\'e7\'e3o update da testApp no ficheiro testApp.cpp chama a 
+\f1\fs20 \CocoaLigature0 go_mouse(); 
+\f0\fs24 e a draw simplesmente desenha o circulo no ecran\
+\
+\pard\tx480\pardeftab480\ql\qnatural\pardirnatural
+
+\f1\fs20 \cf4 void\cf0  testApp::draw()\{\
+	ofBackground(\cf5 58\cf0 ,\cf5 95\cf0 ,\cf5 83\cf0 );\
+	circulo.draw();\
+\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\
+devemos ver isto.\
+\
+um segundo exemplo cria uma array de objectos 
+\f1\fs20 \cf3 \CocoaLigature0 Circulo 
+\f0\fs24 \cf0 \CocoaLigature1 e todos eles chamam a draw e fazem o update das coordenadas em rela\'e7\'e3o ao rato.\
+\
+\
+o terceiro exemplo mostra como ter um apontador para objectos de um tipo que n\'f3s definimos, 
+\f1\fs20 \cf4 \CocoaLigature0 class\cf0  Part, 
+\f0\fs24 \CocoaLigature1 no testApp.h declaramos
+\f1\fs20 \CocoaLigature0  \
+	    \cf3 Part\cf0       *\cf3 p\cf0 ; \cf6 // um pointer para part\'edculas\cf0 \
+\pard\tx480\pardeftab480\ql\qnatural\pardirnatural
+\cf0 		 \cf4 int\cf0 		\cf3 num_p\cf0 ;	\cf6 // o n\'famero de part\'edculas\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 e alocamos mem\'f3ria para o apontador na fun\'e7\'e3o\
+\pard\tx480\pardeftab480\ql\qnatural\pardirnatural
+
+\f1\fs20 \cf4 \CocoaLigature0 void\cf0  init_n_parts(\cf4 int\cf0  num);\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+que \'e9 declarada no ficheiro testApp.cpp desta forma:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f1\fs20 \cf0 \CocoaLigature0 \
+\pard\tx480\pardeftab480\ql\qnatural\pardirnatural
+\cf4 void\cf0  \cf3 testApp\cf0 ::init_n_parts(\cf4 int\cf0  num)\{	\
+     \cf6 //pedimos mem\'f3ria para o apontador com tamanho para array com num elementos\cf0 \
+	p = \cf4 new\cf0  \cf3 Part\cf0 [num];\
+	num_p = num;	\
+	\cf4 float\cf0  w = \cf7 ofGetWidth\cf0 ()/\cf5 2.0f\cf0 ;\
+	\cf4 float\cf0  h = \cf7 ofGetHeight\cf0 ()/\cf5 2.0f\cf0 ;\
+\
+	\cf4 for\cf0 (\cf4 int\cf0  i=\cf5 0\cf0 ; i<num;i++)\{\
+		\cf4 float\cf0  x = w+\cf7 ofRandom\cf0 (-\cf5 100\cf0 ,\cf5 100\cf0 );\
+		\cf4 float\cf0  y = h+\cf7 ofRandom\cf0 (-\cf5 100\cf0 ,\cf5 100\cf0 );\
+		p[i].\cf8 init\cf0 (x,y);	\cf6 ///call init with these params			\cf0 \
+	\}\
+	\
+\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+o quarto exemplo \'e9 um port do starfield que vimos como exemplo inicial 3d em processing. aqui o mais importante \'e9 o uso de um apontador dentro da class Star que aponta para um valor dentro da testApp, que ser\'e1 igual para todas as estrelas. o apontador \'e9 inicializado na fun\'e7\'e3o testApp::setup() e a partir desse momento podemos escrever o mesmo valor global para cada estrela.\
+\
+o quinto exemplo \'e9 um exemplo de computer vision, onde exploramos algumas t\'e9cnicas de identificar blobs nas imagens e tentar usar os dados para representar objectos. j\'e1 \'e9 um exemplo mais complexo, onde criamos um objecto 
+\f1\fs20 \cf4 \CocoaLigature0 class\cf0  ComputerVision 
+\f0\fs24 \CocoaLigature1 que vai iniciar a c\'e2mara e fazer um tracking de blobs usando o addon ofxOpenCv, que coloca \'e0 nossa disposi\'e7\'e3o a biblioteca opencv da intel.\
+\
+}

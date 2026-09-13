@@ -1,0 +1,99 @@
+
+/// projectos individuais som do pensamento 2009
+
+
+
+Tiago Beijoco
+"Mapping / Mapear"
+
+
+titulo: "mapping / mapear"
+
+um rover de exploração espacial move-se num ambiente tridimencional totalmente branco, pautando o espaço com o traçado do seu percurso.
+
+1) colocar um modelo 3d lowpoly de um MER (http://en.wikipedia.org/wiki/Opportunity_rover) num espaço virtual branco
+2) movimentar o objecto no espaço, com a câmara acoplada, reagindo a input analógico.
+3) transformar o movimento do modelo num Scribbler, adicionar função de zoom out
+4) introduzir checkpoints e um radar, para tornar o ambiente jogável.
+
+
+nuno delmas
+Nome: radiação de fundo
+
+representação de uma grelha de pontos de luz "infinitos" em 3d, na qual o espectador pode navegar em diferentes direcções, e velocidades, encontrando padrões e caminhos nesta trama de pontos luminosos.
+
+controlado por um control pad (ou quatro eixos de movimento).
+
+necessário um computador, um monitor e um control pad.
+
+
+
+Fausto Fonseca
+
+Projecção de efeitos visuais que representam musica e os movimentos dos espectadores (com a webcam)
+
+
+Mario Silva
+"sonic network"
+Filamentos de vários densidades combinam-se em  padrões orgânicos que evoluem uma rede num espaço virtual 3d, dialogando com o som do espaço ambiente.
+
+Material: computador 1.5ghz mac, microfone, monitor
+
+
+Eduardo Pinto
+
+"bunny & gummy"
+legendas andam em torno de silhuetas de pessoas
+
+
+
+
+
+Ana Calhandro
+"Glitschig"
+
+projecção de um gráfico onde se encontram organizados vários ruídos por intensidade de frequência.
+detecção do movimento dos espectadores com webcam e sobreposição do registo desse movimento no gráfico.
+pretendo que o registo dos movimentos coincida com os pontos correspondentes aos ruídos e, dessa forma, os accione.
+
+
+Tiago Almeida
+
+construir um "tambor" com o topo translúcido e com uma webcam no interior
+usar um ou mais piezos para capatar a vibração e com a câmara criar uma escala de sons em função da área do "pele" do tambor
+o objectivo é criar um "instrumento" em que os sons variam de intensidade pela força utilizada no toque, e cujo tom difere em função da zona onde se toca
+
+
+
+João Monteiro
+"Bindings"
+Projecção em que organismos ganham uma nova vida ao sentirem a presença humana. Pequenos micro-organismos, plantas e folhas, reagem à presença dos visitantes, tornando-se estes o centro das atenções das entidades virtuais.
+
+
+Margarida Rêgo
+""
+
+
+
+
+Jorge Diogo
+
+
+
+
+
+Ana Moutinho
+
+
+
+
+João Monteiro
+
+
+
+
+Afonso Barros
+
+
+
+Pedro Cascais

@@ -1,0 +1,166 @@
+#N canvas 73 166 665 468 12;
+#N canvas 265 48 643 640 fft-analysis 0;
+#X obj 15 164 *~;
+#X obj 14 99 inlet~;
+#X obj 15 218 rfft~;
+#X obj 36 140 tabreceive~ \$0-hann;
+#X obj 14 353 *~;
+#X obj 56 353 *~;
+#X obj 15 8 block~ 512 4;
+#X text 85 88 The inlet~ now re-uses 3/4 of the previous block \, along
+with the 128 new samples.;
+#X text 221 141 window function as before.;
+#X obj 76 196 tabreceive~ \$0-gain;
+#X obj 77 225 *~;
+#X obj 16 506 *~;
+#X obj 37 481 tabreceive~ \$0-hann;
+#X obj 77 283 /~ 768;
+#X text 98 301 divide by 3N/2 (factor of N because rfft and rifft aren't
+normalized \, and 3/2 is the gain of overlap-4 reconstruction when
+Hann window function is applied twice.);
+#X text 120 216 Just to show we're doing something \, we multiply each
+channel by a gain controlled by an array in the main window. The control
+is quartic-scaled for easy editing.;
+#X obj 78 251 *~;
+#X text 92 357 Multiply the (complex-valued) spectrum amplitudes by
+the (real-valued) gain-and-normalization-factor;
+#X obj 15 399 rifft~;
+#X text 89 396 Real-valued inverse Fourier transform. This uses only
+the first N/@ points of its inputs \, supplying the rest by symmerty
+(so it's OK that rfft~ obly puts out those N/2 points.) There's only
+one outlet because the output is real-valued.;
+#X obj 16 566 outlet~;
+#X text 88 499 Multiply by the Hann window function again \, necessary
+because the operation we performed might result in a signal that doesn't
+go smoothly to zero at both ends.;
+#X text 89 566 This repackages the output into 64-sample chunks for
+the parent window. Since we're operating with an overlap \, the outlet~
+object performs an overlapped sum of the blocks computed in this window.
+;
+#X text 129 8 block~ object specifies vector size of 512 and overlap
+four. This window now computes blocks of 512 samples at intervals of
+128 samples computed on the parent patch.;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 3 0 0 1;
+#X connect 4 0 18 0;
+#X connect 5 0 18 1;
+#X connect 9 0 10 0;
+#X connect 9 0 10 1;
+#X connect 10 0 16 0;
+#X connect 10 0 16 1;
+#X connect 11 0 20 0;
+#X connect 12 0 11 1;
+#X connect 13 0 4 1;
+#X connect 13 0 5 1;
+#X connect 16 0 13 0;
+#X connect 18 0 11 0;
+#X restore 26 289 pd fft-analysis;
+#X text 290 362 updated for Pd version 0.39;
+#N canvas 397 114 592 433 Hann-window 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-hann 512 float 0;
+#X coords 0 1 511 0 200 120 1;
+#X restore 293 249 graph;
+#X msg 171 263 0;
+#X obj 65 312 osc~;
+#X obj 65 264 samplerate~;
+#X obj 65 335 *~ -0.5;
+#X obj 65 358 +~ 0.5;
+#X obj 57 383 tabwrite~ \$0-hann;
+#X text 279 241 1;
+#X text 272 359 0;
+#X text 288 372 0;
+#X obj 65 288 / 512;
+#X obj 57 241 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 336 221 Hann window;
+#X text 113 310 period 512;
+#X text 90 215 recalculate Hann;
+#X text 125 230 window table;
+#X obj 57 146 loadbang;
+#X msg 79 179 \; pd dsp 1;
+#X text 40 27 The Hann window is now recomputed on 'loadbang' to make
+the file smaller (it doesn't have to be saved with the array.);
+#X text 474 375 511;
+#X connect 1 0 2 1;
+#X connect 2 0 4 0;
+#X connect 3 0 10 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 10 0 2 0;
+#X connect 11 0 3 0;
+#X connect 11 0 1 0;
+#X connect 11 0 6 0;
+#X connect 16 0 11 0;
+#X connect 16 0 17 0;
+#X restore 192 318 pd Hann-window;
+#X obj 27 323 output~;
+#X obj 25 264 noise~;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-gain 259 float 3;
+#A 0 -0.0819376 0 0.0819376 0.163313 0.243568 0.322153 0.398533 0.472189
+0.542624 0.609366 0.671974 0.730037 0.783181 0.831069 0.873408 0.909945
+0.940473 0.964832 0.982909 0.994637 1 0.999027 0.991798 0.978435 0.959108
+0.934028 0.903449 0.867661 0.826993 0.781803 0.732481 0.679443 0.623125
+0.563983 0.502488 0.439118 0.374362 0.308706 0.242637 0.176635 0.11117
+0.0466968 -0.0163457 -0.0775407 -0.136496 -0.192845 -0.246253 -0.296417
+-0.343069 -0.385976 -0.424944 -0.459816 -0.490475 -0.516846 -0.538889
+-0.556607 -0.570039 -0.579262 -0.58439 -0.585568 -0.582976 -0.576821
+-0.567339 -0.55479 -0.539452 -0.521627 -0.501626 -0.479774 -0.456404
+-0.431854 -0.406462 -0.380562 -0.354487 -0.328557 -0.30308 -0.278352
+-0.254649 -0.232227 -0.211318 -0.192134 -0.174855 -0.159637 -0.146605
+-0.135856 -0.127454 -0.121435 -0.117802 -0.116531 -0.117565 -0.120822
+-0.126191 -0.133537 -0.142698 -0.153496 -0.165728 -0.179178 -0.193615
+-0.208796 -0.224469 -0.240377 -0.256259 -0.271857 -0.286912 -0.301174
+-0.314402 -0.326363 -0.336842 -0.345637 -0.352566 -0.357469 -0.360205
+-0.360659 -0.358741 -0.354384 -0.347551 -0.338231 -0.32644 -0.312219
+-0.295639 -0.276792 -0.2558 -0.232803 -0.207966 -0.181473 -0.153525
+-0.124341 -0.0941515 -0.0631976 -0.0317297 -3.43482e-06 0.0317229 0.0631908
+0.0941448 0.124335 0.153519 0.181467 0.20796 0.232797 0.255795 0.276788
+0.295635 0.312216 0.326437 0.338229 0.34755 0.354383 0.35874 0.360659
+0.360206 0.35747 0.352568 0.345638 0.336844 0.326366 0.314404 0.301177
+0.286915 0.27186 0.256263 0.24038 0.224472 0.208799 0.193619 0.179182
+0.165731 0.153498 0.142701 0.133538 0.126193 0.120823 0.117566 0.116531
+0.117802 0.121434 0.127452 0.135854 0.146603 0.159634 0.174852 0.19213
+0.211314 0.232222 0.254644 0.278347 0.303075 0.328551 0.354481 0.380557
+0.406456 0.431849 0.456399 0.479769 0.501621 0.521623 0.539449 0.554787
+0.567337 0.576819 0.582975 0.585568 0.58439 0.579264 0.570041 0.55661
+0.538893 0.516851 0.490481 0.459823 0.424952 0.385985 0.343079 0.296428
+0.246264 0.192857 0.136508 0.0775537 0.0163591 -0.046683 -0.111156
+-0.176621 -0.242623 -0.308692 -0.374348 -0.439104 -0.502474 -0.56397
+-0.623112 -0.679431 -0.73247 -0.781793 -0.826984 -0.867653 -0.903442
+-0.934022 -0.959103 -0.978432 -0.991796 -0.999026 -1 -0.994639 -0.982912
+-0.964837 -0.940479 -0.909952 -0.873417 -0.831079 -0.783192 -0.730049
+-0.671987 -0.60938 -0.542638 -0.472204 -0.398549 -0.32217 -0.243585
+-0.16333 -0.0819553 -1.7738e-05 0.08192;
+#X coords 0 1 259 -0.01 512 60 1;
+#X restore 22 168 graph;
+#X msg 192 264 const 0;
+#X obj 192 293 s \$0-gain;
+#X text 138 0 FOURIER RESYNTHESIS;
+#X text 6 218 0;
+#X text 6 159 1;
+#X text 19 228 0;
+#X text 516 231 22K;
+#X text 251 264 <- reset gain;
+#X text 224 148 GAIN;
+#X text 21 24 Using Fourier resynthesis you can take an incoming sound
+\, operate on its spectrum \, and hear the result. Here we start with
+white noise and apply a frequency-dependent gain \, which works as
+a graphic equalizer. There are N/2 = 256 points \, each spaced SR/512
+Hz. apart (although their frequency ranges overlap). Open the "fft-analysis"
+patch to see the workings.;
+#X msg 191 241 const 0.5;
+#X msg 276 294 sinesum 256 \$1 0.2 0.2 0.2 \, normalize;
+#X floatatom 400 271 5 0 0 0 - - -;
+#X floatatom 89 323 5 0 0 0 - - -;
+#X connect 0 0 3 0;
+#X connect 4 0 0 0;
+#X connect 6 0 7 0;
+#X connect 16 0 7 0;
+#X connect 17 0 7 0;
+#X connect 18 0 17 0;
+#X connect 19 0 3 1;

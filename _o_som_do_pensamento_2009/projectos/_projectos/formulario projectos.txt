@@ -1,0 +1,64 @@
+_ aqui seguem as informações genéricas sobre os 3 tipos de projectos:
+projectos online, projectos individuais, projecto colectivo
+que preciso que vocês enviem até 15 de maio _
+
+
+projecto online:
+(tenho 1,2,3 projectos online engraçados que desenvolvi
+nas aulas. finalizem o projecto até final junho.
+tragam versões de desenvolvimento para críticas construtivas
+colectivas nas sessões.)
+necessário: título, applet processing
+opcional: descrição, imagem
+
+
+projecto colectivo:
+(o tiago sugeriu o título de 'sons do pensamento'
+para o projecto colectivo, o que acham?)
+
+(a ideia é criar agentes diferentes
+que recebam e gerem partículas para fora
+das regiões do próprio ecran, fazendo-as
+entrar noutro agente...)
+
+nome(s) pessoas envolvidas num agente:
+tecnologias que o agente vai usar (physical comp / cam tracking / audio / ...)
+material necessário para requisitar para o agente:
+
+
+
+projecto individual:
+
+nome:
+título do projecto:
+descrição do projecto (1 parágrafo para apresentação pública):
+imagem de divulgação do projecto (1jpg 800x600 dimensões mínimas <opcional>):
+imagens descritivas / esquemas gráficos de montagem / image (opcional)):
+
+descrição do espaço óptimo de apresentação do projecto:
+descrição de material envolvido na apresentação do projecto:
+material necessário (a fbaul disponibiliza alguns computadores / projectores / espaços /...):
+
+para vos ajudar a concretizar o projecto:
+descrição do algoritmo.
+
+ex1: situação de reconhecimento de blobs.
+qd não há blobs a peça gera plantas que crescem
+qd entram um, dois blobs, a posição das blobs interfere com as plantas, movendo partes do tronco
+qd entram >3 blobs, abelhas voam entre as blobs e as plantas
+se as blobs se mexem a cena acalma, se as blobs estáticas a cena vai desaparecendo
+se as blobs saiem durante pouco tempo, a cena mantém e evolui,
+se o tempo da última blob é superior a 1min então a cena entra em fade e desaparece
+
+ex2: escultura cinética que vai desenhando percursos em papel
+três motores ligados a 3 rodas com ldr's a sentir a luz do espaço e um lápis no eixo central
+divaga numa superficie fechada em cima duma folha de papel
+
+ex3: posição espacial de pessoas gera sons de discursos ou sintéticos de
+análises de mercados de bolsa em colunas no espaço
+
+....
+
+em todos estes exemplos é importante pensarem o algoritmo que está
+por detrás do comportamento da peça, e isso é que vamos trabalhar
+ao longo das aulas que restam

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/96/trunk/MostPixelsEverUDP/mpe/client
+END
+BroadcastDoneThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/38/trunk/MostPixelsEverUDP/mpe/client/BroadcastDoneThread.java
+END
+MpeDataListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3/trunk/MostPixelsEverUDP/mpe/client/MpeDataListener.java
+END
+UDPClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/96/trunk/MostPixelsEverUDP/mpe/client/UDPClient.java
+END
+AsyncClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/93/trunk/MostPixelsEverUDP/mpe/client/AsyncClient.java
+END

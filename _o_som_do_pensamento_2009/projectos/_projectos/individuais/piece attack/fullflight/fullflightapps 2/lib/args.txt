@@ -1,0 +1,3 @@
+ -Xms64m -Xmx2048m
+fullflight
+fullflight.jar,core.jar,opengl.jar,jogl.jar,gluegen-rt.jar,opengl.jar,jogl.jar,gluegen-rt.jar,objloader.jar

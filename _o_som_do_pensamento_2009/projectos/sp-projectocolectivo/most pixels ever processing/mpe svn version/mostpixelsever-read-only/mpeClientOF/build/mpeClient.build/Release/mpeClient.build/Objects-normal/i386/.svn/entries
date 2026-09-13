@@ -1,0 +1,53 @@
+8
+
+dir
+96
+http://mostpixelsever.googlecode.com/svn/trunk/mpeClientOF/build/mpeClient.build/Release/mpeClient.build/Objects-normal/i386
+http://mostpixelsever.googlecode.com/svn
+
+
+
+2008-10-21T16:08:01.298361Z
+63
+mantissa
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+157d3c86-a953-0410-9145-c177083a77ea
+
+mpeClient
+file
+
+
+
+
+2009-04-29T13:01:21.000000Z
+346c9625503b64a700b23d877b55b905
+2008-10-21T16:08:01.298361Z
+63
+mantissa
+has-props
+
+mpeClient.LinkFileList
+file
+
+
+
+
+2009-04-29T13:01:21.000000Z
+70090db3eb4c4496814b7017d934c9ad
+2008-10-21T16:08:01.298361Z
+63
+mantissa
+

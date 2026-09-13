@@ -1,0 +1,67 @@
+#N canvas 92 101 699 602 10;
+#X floatatom 76 69 5 0 0 0 - - -;
+#X obj 179 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 76 45 speed;
+#X text 180 46 read;
+#X obj 63 451 dac~;
+#X obj 52 422 *~ 0.7;
+#X obj 76 90 a-soundplayer 0.51;
+#X msg 52 549 \; pd dsp 1;
+#X msg 116 549 \; pd dsp 0;
+#X floatatom 132 304 0 0 0 0 - - -;
+#X obj 132 281 r rev;
+#X obj 187 281 r revtime;
+#X floatatom 187 304 0 0 0 0 - - -;
+#X obj 122 338 rev2~;
+#X obj 151 426 writesf~;
+#X msg 208 426 start;
+#X msg 249 426 stop;
+#X obj 211 384 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 147 90 281 278 --open-file 0;
+#X obj 44 194 outlet;
+#X obj 44 69 inlet;
+#X obj 44 115 savepanel;
+#X msg 44 151 open \$1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X restore 211 403 pd --open-file;
+#N canvas 0 22 450 300 thru 0;
+#X obj 225 127 inlet~;
+#X obj 224 162 outlet~;
+#X connect 0 0 1 0;
+#X restore 63 376 pd thru;
+#X text 262 87 além do reverb \, inserir mais filtros exemplificados
+hoje;
+#X obj 82 165 hsl 64 10 0 12500 0 0 empty empty empty -2 -8 0 10 -204800
+-1 -1 0 1;
+#X floatatom 79 180 0 0 0 0 - - -;
+#X obj 72 212 bp~;
+#X text 75 149 center freq;
+#X obj 106 186 hsl 30 10 0 100 0 0 empty empty empty -2 -8 0 10 -204800
+-1 -1 0 1;
+#X floatatom 103 201 0 0 0 0 - - -;
+#X text 99 170 q;
+#X connect 0 0 6 0;
+#X connect 1 0 6 1;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 6 0 23 0;
+#X connect 9 0 13 1;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 2;
+#X connect 13 0 19 0;
+#X connect 15 0 14 0;
+#X connect 16 0 14 0;
+#X connect 17 0 18 0;
+#X connect 18 0 14 0;
+#X connect 19 0 5 0;
+#X connect 19 0 14 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 1;
+#X connect 23 0 13 0;
+#X connect 25 0 26 0;
+#X connect 26 0 23 2;

@@ -1,0 +1,3 @@
+ -Xms64m -Xmx512m
+wargames
+wargames.jar,core.jar,opengl.jar,jogl.jar,gluegen-rt.jar,opengl.jar,jogl.jar,gluegen-rt.jar,opengl.jar,jogl.jar,gluegen-rt.jar,opengl.jar,jogl.jar,gluegen-rt.jar,opengl.jar,jogl.jar,gluegen-rt.jar

@@ -1,0 +1,89 @@
+1
+Jorge Diogo
+A Jet Set Willy 
+ajetsetwilly-256x256.jpg
+Um retrato psicológico de um Jet Set Willy. ajetsetwilly3.app
+moveEye
+2
+Jorge Diogo
+American Football
+americanfootbal-256x256.jpg
+Jogos de destruição em cadeia. \n Inclui um poema de Harold Pinter com o mesmo título.
+sprayticle10.app
+3
+Jorge Diogo
+Snake Pills
+snakepills-256x256.jpg
+Um snake com microfone ou tecla de espaço.
+snakePills7.app
+4
+Jorge Diogo
+Ghost
+ghost-256x256.jpg
+Sobre o mundo artificial versus mundo natural.
+ghost6.app
+1
+Jorge Diogo
+A Jet Set Willy 
+ajetsetwilly-256x256.jpg
+Um retrato psicológico de um Jet Set Willy.
+process1.app
+2
+Jorge Diogo
+American Football
+americanfootbal-256x256.jpg
+Jogos de destruição em cadeia.\nInclui um poema de Harold Pinter com o mesmo título.
+process1.app
+3
+Jorge Diogo
+Snake Pills
+snakepills-256x256.jpg
+Um snake com microfone ou tecla de espaço.
+open("/Applications/Process_1.app");
+4
+Jorge Diogo
+Ghost
+ghost-256x256.jpg
+Sobre o mundo artificial versus mundo natural.
+open("/Applications/Process_1.app");
+1
+Jorge Diogo
+A Jet Set Willy 
+ajetsetwilly-256x256.jpg
+Um retrato psicológico de um Jet Set Willy.
+process1.app
+2
+Jorge Diogo
+American Football
+americanfootbal-256x256.jpg
+Jogos de destruição em cadeia. Inclui um poema de Harold Pinter com o mesmo título.
+process1.app
+3
+Jorge Diogo
+Snake Pills
+snakepills-256x256.jpg
+Um snake com microfone ou tecla de espaço.
+open("/Applications/Process_1.app");
+4
+Jorge Diogo
+Ghost
+ghost-256x256.jpg
+Sobre o mundo artificial versus mundo natural.
+open("/Applications/Process_1.app");
+5
+Tiago Beijoco
+rigging
+ajetsetwilly-256x256.jpg
+"exercício de animação de formas"
+open("/Applications/Process_1.app");
+6
+Mário Silva
+sonic network
+ajetsetwilly-256x256.jpg
+"Um retrato psicológico de um Jet Set Willy."
+open("/Applications/Process_1.app");"
+7
+Piece Attack
+wargames
+misseis são enviados de e para todas as cidades do mundo"
+open("/Applications/Process_1.app");"

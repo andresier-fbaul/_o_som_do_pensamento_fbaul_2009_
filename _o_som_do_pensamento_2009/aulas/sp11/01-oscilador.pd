@@ -1,0 +1,24 @@
+#N canvas 223 66 253 299 10;
+#X obj 69 109 osc~ 440;
+#X obj 70 141 *~ 0.1;
+#X obj 70 178 dac~;
+#X msg 38 206 \; pd dsp 1;
+#X msg 102 206 \; pd dsp 0;
+#X text 15 270 oscilador / som do pensamento 2009;
+#X obj 81 64 mtof;
+#X floatatom 82 43 5 0 0 0 - - -;
+#X floatatom 85 85 5 0 0 0 - - -;
+#X obj 85 17 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 139 131 vsl 8 25 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 100 1;
+#X floatatom 139 165 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 6 0 0 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 9 0 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 1 1;

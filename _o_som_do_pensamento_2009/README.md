@@ -6,3 +6,11 @@ Curso de programação de ambientes jogáveis. Criação de programas e circuito
 https://osomdopensamento.wordpress.com/
 
 ![sompensamento_cartaz_transparente.png](media/sompensamento_cartaz_transparente.png) <br>
+
+# exposição fábrica features
+
+![sompensamento_cartaz_transparente.png](media/osomdopensamento_julho2009/_expo_fabrica/_2print/mailSONSPENSAMENTO.rtfd/sons-do-pensamento700.jpg) <br>
+
+folha de sala exposição sons do pensamento
+
+[folha de sala exposição sons do pensamento](media/osomdopensamento_julho2009/_expo_fabrica/_2print/desd_SSP.pdf)
